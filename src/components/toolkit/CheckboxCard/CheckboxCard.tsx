@@ -1,9 +1,7 @@
-type TCheckboxCard = {
-  id: string;
-  name: string;
+import type { InputHTMLAttributes } from 'react';
+
+type TCheckboxCard = InputHTMLAttributes<HTMLInputElement> & {
   text: string;
-  checked: boolean;
-  onChange: () => void;
 };
 
 const CheckboxCard = ({ id, name, checked, ...rest }: TCheckboxCard) => {

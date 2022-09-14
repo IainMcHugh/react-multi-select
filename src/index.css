@@ -12,3 +12,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app {
+  width: 100%;
+  background-color: #fafafa;
+  min-height: 100vh;
+}
+
+.home {
+  max-width: 700px;
+  margin: 48px auto;
+}
+
+.checkbox-card {
+  padding: 24px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  margin-bottom: 12px;
+}
+
+.checked {
+  border: 1px solid rgb(0, 136, 255);
+}
+
+.checked > label {
+  color: rgb(0, 136, 255);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}

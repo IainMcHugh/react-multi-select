@@ -3,3 +3,9 @@ export type TData = {
   name: string;
   description: string;
 };
+
+export type TDataB = {
+  id: string;
+  hasPets: boolean;
+  age: number;
+};
