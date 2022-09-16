@@ -2,11 +2,11 @@ import { MultiSelect } from 'src/modules/MultiSelect';
 
 import type { TData } from 'types';
 import { mockData } from 'src/data/mock';
-import { List } from 'src/components/pages/Home/components/List';
+import { List } from 'src/components/pages/HomeA/components/List';
 
 type TAction = 'EMAIL' | 'DOWNLOAD';
 
-const Home = () => {
+const HomeA = () => {
   const callback = (items: TData[], action: TAction) => {
     switch (action) {
       case 'EMAIL':
@@ -34,4 +34,4 @@ const Home = () => {
   );
 };
 
-export { Home };
+export { HomeA };
