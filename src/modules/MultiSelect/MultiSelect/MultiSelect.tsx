@@ -1,8 +1,8 @@
-import type { ReactNode, Context } from 'react';
+import type { Context } from 'react';
 import { createContext, useContext } from 'react';
 
 import type { TMultiSelectContext, TMultiSelect } from './types';
-import { useMultiSelect as useMS } from './hooks/useMultiSelect';
+import { useMultiSelect as useMultiSelectState } from './hooks/useMultiSelect';
 
 const MultiSelectContext = createContext<TMultiSelectContext<any>>(
   {} as TMultiSelectContext<any>
@@ -13,14 +13,12 @@ const MultiSelect = <T extends { id: string }, TAction>({
   callback,
   children,
 }: TMultiSelect<T, TAction>) => {
-  const ms = useMS<T>({
-    data,
-  });
+  const state = useMultiSelectState<T>({ data });
   return (
-    <MultiSelectContext.Provider value={{ ...ms }}>
+    <MultiSelectContext.Provider value={{ ...state }}>
       {children({
-        items: ms.items,
-        onAction: (action) => callback && callback(ms.selected, action),
+        items: state.items,
+        onAction: (action) => callback && callback(state.selected, action),
       })}
     </MultiSelectContext.Provider>
   );

@@ -17,7 +17,15 @@ const List = ({ items, variant }: TList) => {
       {items.map((item) => (
         <MultiSelectItem<TData> id={item.item.id} key={item.item.id}>
           {({ item, data }) => (
-            <CheckboxCard {...item} text={data.description} />
+            <CheckboxCard
+              id={item.id}
+              name={item.name}
+              onChange={item.onChange}
+              onFocus={item.onFocus}
+              onBlur={item.onBlur}
+              checked={item.checked}
+              text={data.description}
+            />
           )}
         </MultiSelectItem>
       ))}

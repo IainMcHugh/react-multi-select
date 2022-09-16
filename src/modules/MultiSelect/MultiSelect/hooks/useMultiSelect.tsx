@@ -67,6 +67,7 @@ function useMultiSelect<T extends { id: string }>({
   const selectAll = () => {
     dispatch({ type: ACTIONS.SELECT_ALL });
   };
+
   const clearAll = () => {
     dispatch({ type: ACTIONS.CLEAR_ALL });
   };
